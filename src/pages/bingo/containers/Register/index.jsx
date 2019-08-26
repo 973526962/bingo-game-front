@@ -148,7 +148,7 @@ class Register extends React.PureComponent {
         store(STORE_KEY.KEY_STORE, keyStore);
         store(STORE_KEY.ADDRESS, address);
       } else {
-        throw new Error(res.msg);
+        throw new Error(res.msg); // todo: where do you catch the error ?
       }
     });
 
@@ -172,6 +172,7 @@ class Register extends React.PureComponent {
       });
   };
 
+  // todo: merge the method nameInput & passwordInput, extract the common part within if/else at the same time.
   nameInput = value => {
     const { t } = this.props;
     const { errors, values } = this.state;
@@ -262,6 +263,7 @@ class Register extends React.PureComponent {
     }
   };
 
+  // todo: reorganize the errors's data structure such as errors: {username: {msg: }}, it will reduce the switch code
   onErrorClick = type => {
     const { errors } = this.state;
     let info = null;
@@ -329,6 +331,7 @@ class Register extends React.PureComponent {
             </List>
           </div>
           <WhiteSpace size="lg" />
+          {/* todo: merge the inputLine by iterator */}
           <div className="inputLine">
             <ShowRotateBtn name={t('password')} />
             <List className="registerInputList">

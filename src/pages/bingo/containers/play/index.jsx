@@ -61,8 +61,8 @@ class BingoGame extends React.Component {
     super(props);
     this.state = {
       // When the contract is awarded, the page can be displayed
-      // loaded: false,
-      loaded: true,
+      loaded: false,
+      // loaded: true,
       cards: 0,
       // Determine whether the input is correct
       inputHasError: false,
@@ -352,7 +352,7 @@ class BingoGame extends React.Component {
             {t('batAmount')}
             ————
           </div>
-
+          {/* todo: use iterator to generate the four buttons below */}
           <Button
             className="btn"
             onClick={() => {
@@ -404,6 +404,7 @@ class BingoGame extends React.Component {
             <Record
               type="myRecords"
               info={personalData}
+              // todo: do not use arrow function, it will generate an all new function every render
               refresh={() => personalRecords({
                 address: store.get(STORE_KEY.ADDRESS),
                 pageNum: 1,

@@ -96,7 +96,7 @@ class Login extends React.PureComponent {
       nextLanguage = 'zh';
     }
     i18n.changeLanguage(nextLanguage);
-  }
+  } // todo: use normal function instead of arrow function
 
   render() {
     const { address } = this.state;

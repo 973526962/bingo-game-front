@@ -54,6 +54,7 @@ class Mnemonic extends React.Component {
         subtitle={t('mnemonicPrompt')}
         onDone={this.onDone}
       >
+        {/* todo: what is the <> below work for ? */}
         <>
           {mnemonic.split(' ').map(data => (
             <div key={data} className="word">{data}</div>
